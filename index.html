@@ -1,1 +1,29 @@
-#
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3x3 数字华容道</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>3x3 数字华容道</h1>
+
+      <section class="panel" aria-label="游戏信息与操作">
+        <p class="steps">步数：<span id="step-count">0</span></p>
+        <button id="restart-btn" type="button">重新开始</button>
+      </section>
+
+      <section
+        id="puzzle"
+        class="puzzle"
+        aria-label="数字华容道棋盘"
+      ></section>
+
+      <p class="tip">点击与空白格相邻的数字即可移动</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --tile: #eef2ff;
+  --tile-hover: #e0e7ff;
+  --empty: #d1d5db;
+  --shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #eef2ff 0%, var(--bg) 40%);
+  color: var(--text);
+}
+
+.container {
+  width: min(92vw, 430px);
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.steps {
+  margin: 0;
+  font-weight: 600;
+}
+
+#restart-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#restart-btn:hover {
+  background: var(--primary-dark);
+}
+
+.puzzle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tile {
+  border: none;
+  border-radius: 14px;
+  aspect-ratio: 1 / 1;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: var(--tile);
+  color: var(--text);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.tile:hover {
+  background: var(--tile-hover);
+  transform: translateY(-1px);
+}
+
+.tile:active {
+  transform: translateY(0);
+}
+
+.tile.empty {
+  background: var(--empty);
+  cursor: default;
+  box-shadow: none;
+}
+
+.tip {
+  margin: 14px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 18px;
+  }
+
+  .tile {
+    font-size: 1.25rem;
+  }
+}
